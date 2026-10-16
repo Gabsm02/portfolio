@@ -7,7 +7,7 @@ O objetivo é apresentar quem eu sou, meus conhecimentos, projetos, trajetória 
 ## Estudante
 
 - **Nome:** Gabriel de Oliveira Mendes
-- **Curso:** Tecnologia — UCSAL
+- **Curso:** Engenharia de Software — UCSAL
 - **Atuação:** Estagiário na Vivo, desenvolvedor Fullstack
 
 ## Estrutura de arquivos
