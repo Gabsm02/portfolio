@@ -1,0 +1,559 @@
+/* ===== Cores inspiradas na Vivo ===== */
+:root {
+  --roxo: #660099;
+  --roxo-escuro: #42005f;
+  --roxo-medio: #8a2be2;
+  --roxo-claro: #f4ebfa;
+  --rosa: #eb3c7d;
+  --branco: #ffffff;
+  --fundo: #faf7fc;
+  --texto: #2b2135;
+  --texto-suave: #6b5f75;
+  --borda: #e6dbef;
+  --raio: 16px;
+  --sombra: 0 6px 20px rgba(102, 0, 153, 0.1);
+  --largura-max: 1040px;
+}
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1.5rem;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--texto);
+  background-color: var(--fundo);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: var(--roxo);
+  margin-bottom: 1.25rem;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  background-color: var(--rosa);
+}
+
+/* ===== Botões ===== */
+.botao {
+  display: inline-block;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--branco);
+  background-color: var(--roxo);
+  border: 2px solid var(--roxo);
+  border-radius: 999px;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.botao:hover,
+.botao:focus {
+  background-color: var(--roxo-escuro);
+  border-color: var(--roxo-escuro);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(102, 0, 153, 0.3);
+}
+
+.botao-contorno {
+  background-color: transparent;
+  border-color: var(--branco);
+}
+
+.botao-contorno:hover,
+.botao-contorno:focus {
+  background-color: var(--branco);
+  border-color: var(--branco);
+  color: var(--roxo);
+}
+
+/* Selo de destaque */
+.selo {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--branco);
+  background-color: var(--rosa);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+}
+
+.selo-claro {
+  color: var(--roxo);
+  background-color: var(--roxo-claro);
+}
+
+/* ===== Cabeçalho ===== */
+.cabecalho {
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo) 55%, var(--roxo-medio));
+}
+
+/* Flexbox: nome à esquerda e menu à direita */
+.cabecalho-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem max(1.5rem, calc((100% - var(--largura-max)) / 2));
+  background-color: rgba(66, 0, 95, 0.6);
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--branco);
+  text-decoration: none;
+}
+
+/* ===== Menu ===== */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  display: block;
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.12);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.menu a:hover,
+.menu a:focus {
+  background-color: var(--branco);
+  color: var(--roxo);
+}
+
+/* Apresentação */
+.apresentacao {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.apresentacao h1 {
+  font-size: 2.75rem;
+  margin: 0;
+}
+
+.subtitulo {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #f3d9ff;
+}
+
+.frase {
+  max-width: 560px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* ===== Conteúdo principal ===== */
+.conteudo {
+  max-width: var(--largura-max);
+  margin: -2.5rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.secao {
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.secao p {
+  color: var(--texto-suave);
+}
+
+/* Sobre mim: Flexbox com texto e foto lado a lado */
+.sobre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  gap: 2rem;
+}
+
+.sobre-texto {
+  flex: 1 1 400px;
+}
+
+.foto {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 4px solid var(--roxo-claro);
+  box-shadow: 0 10px 24px rgba(102, 0, 153, 0.25);
+}
+
+/* Conhecimentos: etiquetas com Flexbox */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.tags li {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--roxo);
+  background-color: var(--roxo-claro);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+}
+
+/* ===== Tabela ===== */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tabela th,
+.tabela td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.tabela th {
+  color: var(--branco);
+  background-color: var(--roxo);
+}
+
+.tabela td {
+  border-bottom: 1px solid var(--borda);
+}
+
+.tabela tbody tr:nth-child(even) {
+  background-color: var(--fundo);
+}
+
+.tabela tbody tr:hover {
+  background-color: var(--roxo-claro);
+}
+
+.tabela td:first-child {
+  font-weight: 700;
+  color: var(--roxo);
+}
+
+/* ===== Cards de projetos ===== */
+.cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  border: 1px solid var(--borda);
+  border-top: 5px solid var(--roxo);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+  min-width: 240px;
+  background-color: var(--branco);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+}
+
+.card h3 {
+  margin: 0;
+  color: var(--roxo);
+}
+
+.card p {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.card .botao {
+  margin-top: 0.5rem;
+}
+
+/* Card do projeto da Vivo em destaque */
+.card-destaque {
+  border-top-color: var(--rosa);
+  background: linear-gradient(180deg, var(--roxo-claro), var(--branco) 60%);
+}
+
+.card-etiqueta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--branco);
+  background-color: var(--roxo);
+  border-radius: 6px;
+  padding: 0.15rem 0.6rem;
+}
+
+.card-tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card-tecnologias li {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  padding: 0.1rem 0.5rem;
+}
+
+/* ===== Formulário ===== */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 680px;
+}
+
+.campos-linha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.campos-linha .campo {
+  flex: 1 1 220px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo label {
+  font-weight: 600;
+  color: var(--roxo);
+}
+
+.campo input,
+.campo textarea {
+  font: inherit;
+  color: var(--texto);
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  background-color: var(--fundo);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 3px rgba(102, 0, 153, 0.15);
+}
+
+.formulario .botao {
+  align-self: flex-start;
+}
+
+/* ===== Área complementar (aside) ===== */
+.complementar {
+  max-width: var(--largura-max);
+  margin: 0 auto 2.5rem;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.complementar-bloco {
+  flex: 2 1 380px;
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 2rem;
+}
+
+.complementar-destaque {
+  flex: 1 1 240px;
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--roxo), var(--roxo-medio));
+  border: none;
+}
+
+.complementar-destaque h2 {
+  color: var(--branco);
+}
+
+.complementar-destaque p {
+  margin: 0 0 0.75rem;
+}
+
+.linha-do-tempo {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 3px solid var(--roxo-claro);
+}
+
+.linha-do-tempo li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 1.25rem 1.5rem;
+}
+
+.linha-do-tempo li:last-child {
+  padding-bottom: 0;
+}
+
+.linha-do-tempo li::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 4px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--roxo);
+  border: 3px solid var(--branco);
+  box-shadow: 0 0 0 2px var(--roxo);
+}
+
+.linha-do-tempo li:last-child::before {
+  background-color: var(--rosa);
+  box-shadow: 0 0 0 2px var(--rosa);
+}
+
+.linha-do-tempo strong {
+  color: var(--roxo);
+}
+
+.linha-do-tempo span {
+  color: var(--texto-suave);
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+  color: var(--branco);
+  background-color: var(--roxo-escuro);
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.rodape p {
+  margin: 0;
+}
+
+/* ===== Telas pequenas ===== */
+@media (max-width: 600px) {
+  .cabecalho-topo {
+    justify-content: center;
+    padding: 0.75rem 1rem;
+  }
+
+  .apresentacao {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .apresentacao h1 {
+    font-size: 2rem;
+  }
+
+  .conteudo,
+  .complementar {
+    padding: 0 1rem;
+  }
+
+  .secao,
+  .complementar-bloco {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .sobre {
+    justify-content: center;
+  }
+
+  .foto {
+    width: 140px;
+    height: 140px;
+  }
+
+  .tabela {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .formulario .botao {
+    align-self: stretch;
+  }
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Portfólio</title>
+    <meta
+      name="description"
+      content="Portfólio pessoal de Gabriel Mendes, desenvolvedor Fullstack."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+      <div class="cabecalho-topo">
+        <a href="#sobre" class="logo">Gabriel Mendes</a>
+        <nav>
+          <ul class="menu">
+            <li><a href="#sobre">Sobre mim</a></li>
+            <li><a href="#conhecimentos">Conhecimentos</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="apresentacao">
+        <span class="selo">Estagiário na Vivo</span>
+        <h1>Olá, eu sou Gabriel Mendes</h1>
+        <p class="subtitulo">Desenvolvedor Fullstack</p>
+        <p class="frase">
+          Crio soluções digitais completas, com foco em boa experiência do
+          usuário, organização do código e desenvolvimento funcional.
+        </p>
+        <div class="acoes">
+          <a href="#projetos" class="botao">Ver projetos</a>
+          <a href="#contato" class="botao botao-contorno">Fale comigo</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="conteudo">
+      <section id="sobre" class="secao sobre">
+        <div class="sobre-texto">
+          <h2>Sobre mim</h2>
+          <p>
+            Sou uma pessoa curiosa, criativa e apaixonada por tecnologia.
+            Estudo na UCSAL, na área de tecnologia, e hoje faço estágio na Vivo,
+            onde participo do desenvolvimento de ferramentas para análise de
+            dados.
+          </p>
+          <p>
+            Tenho interesse em desenvolvimento web, interfaces intuitivas e
+            soluções que transformam dados em decisões.
+          </p>
+          <p>
+            Este portfólio reúne minha evolução prática em Front-End e os
+            projetos que venho construindo ao longo do caminho.
+          </p>
+          <span class="selo selo-claro">Portfólio em construção</span>
+        </div>
+        <img
+          src="imagens/foto.jpeg"
+          alt="Foto de Gabriel Mendes"
+          class="foto"
+        />
+      </section>
+
+      <section id="conhecimentos" class="secao">
+        <h2>Conhecimentos</h2>
+        <ul class="tags">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>Node.js</li>
+          <li>React</li>
+          <li>Adonis</li>
+          <li>Nuxtjs</li>
+          <li>Banco de dados</li>
+          <li>Git e GitHub</li>
+        </ul>
+
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>Tecnologia</th>
+              <th>Nível</th>
+              <th>Aplicação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML</td>
+              <td>Intermediário</td>
+              <td>Estrutura semântica das páginas</td>
+            </tr>
+            <tr>
+              <td>CSS</td>
+              <td>Intermediário</td>
+              <td>Estilização e organização do layout</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>Intermediário</td>
+              <td>Interatividade e lógica no navegador</td>
+            </tr>
+            <tr>
+              <td>Python</td>
+              <td>Intermediário</td>
+              <td>Automação e análise de dados</td>
+            </tr>
+            <tr>
+              <td>Banco de dados</td>
+              <td>Intermediário</td>
+              <td>Consultas e organização de informações</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="projetos" class="secao">
+        <h2>Projetos</h2>
+        <div class="cards">
+          <article class="card card-destaque">
+            <span class="card-etiqueta">Vivo</span>
+            <h3>Ferramentas de análise de dados</h3>
+            <p>
+              Desenvolvimento de ferramentas internas que auxiliam as equipes
+              na coleta, organização e análise de dados.
+            </p>
+            <ul class="card-tecnologias">
+              <li>Python</li>
+              <li>Banco de dados</li>
+            </ul>
+            <a href="#contato" class="botao">Saiba mais</a>
+          </article>
+          <article class="card card-destaque">
+            <span class="card-etiqueta">Vivo</span>
+            <h3>Bot Telegram</h3>
+            <p>
+              Desenvolvimento de um bot no telegram para acompanhamento dos gabinetes dentro dos sites.
+            </p>
+            <ul class="card-tecnologias">
+              <li>JavaScript</li>
+            </ul>
+            <a href="#contato" class="botao">Saiba mais</a>
+          </article>
+          <article class="card card-destaque">
+            <span class="card-etiqueta">Vivo</span>
+            <h3>Automação Celldowntime</h3>
+            <p>
+              Desenvolvimento de código para ETL, com automações no power automate para envio dos dados para o sharepoint.
+            </p>
+            <ul class="card-tecnologias">
+              <li>Python</li>
+              <li>Banco de dados</li>
+              <li>Power Automate</li>
+              <li>Sharepoint</li>
+            </ul>
+            <a href="#contato" class="botao">Saiba mais</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contato" class="secao">
+        <h2>Contato</h2>
+        <p>Quer conversar sobre um projeto ou oportunidade? Envie uma mensagem.</p>
+        <form class="formulario">
+          <div class="campos-linha">
+            <div class="campo">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" required />
+            </div>
+            <div class="campo">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+          </div>
+          <div class="campo">
+            <label for="assunto">Assunto</label>
+            <input type="text" id="assunto" name="assunto" />
+          </div>
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+          </div>
+          <button type="submit" class="botao">Enviar mensagem</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Área complementar -->
+    <aside class="complementar">
+      <div class="complementar-bloco">
+        <h2>Trajetória</h2>
+        <ol class="linha-do-tempo">
+          <li>
+            <strong>2023 · Cubos Academy</strong>
+            <span>Curso de desenvolvimento web com foco em front-end e back-end.</span>
+          </li>
+          <li>
+            <strong>2024 · Projetista em TI na Praxis Empresa Júnior</strong>
+            <span>Desenvolvimento de soluções tecnológicas para clientes.</span>
+          </li>
+          <li>
+            <strong>2025 · Gerente de TI na Praxis Empresa Júnior</strong>
+            <span>Gestão de projetos e equipes de desenvolvimento de software.</span>
+          </li>
+          <li>
+            <strong>2025 · Estágio na Vivo</strong>
+            <span>Desenvolvimento de ferramentas para análise de dados, bot do telegram e telas com AdonnisJS e Nuxt.</span>
+          </li>
+        </ol>
+      </div>
+      <div class="complementar-bloco complementar-destaque">
+        <h2>Agora</h2>
+        <p>
+          Estagiando na Vivo e estudando Programação Front-End na UCSAL.
+        </p>
+        <p>Aberto a novos projetos e parcerias.</p>
+      </div>
+    </aside>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+      <p>© 2026 Gabriel Mendes · Programação Front-End · UCSAL</p>
+    </footer>
+  </body>
+</html>
