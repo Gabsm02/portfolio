@@ -16,6 +16,11 @@ O objetivo é apresentar quem eu sou, meus conhecimentos, projetos, trajetória 
 .
 ├── index.html            # Página do portfólio
 ├── style.css             # Estilos (cores inspiradas na Vivo, layout responsivo)
+├── script.js             # JavaScript do portfólio (Aula 11 — saídas no console)
+├── aula11-javascript/
+│   ├── index.html        # Página da oficina da Aula 11
+│   ├── atividade11.js    # Implementações A, B, C e D
+│   └── respostas.md      # Respostas da Parte 1 e saídas do console
 ├── imagens/
 │   └── foto.jpeg         # Foto usada na seção "Sobre mim"
 ├── image.png             # Print da página aberta no navegador (primeira versão, sem CSS)
@@ -31,6 +36,7 @@ Não há dependências nem etapa de build. Basta abrir o arquivo `index.html` no
 
 - HTML5 semântico
 - CSS3 (variáveis CSS, Flexbox/Grid e media query para telas de até 600px)
+- JavaScript (variáveis, tipos, operadores, condicionais e funções — saídas no console)
 
 ## Explicação da estrutura semântica
 
