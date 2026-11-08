@@ -13,6 +13,11 @@
   --raio: 16px;
   --sombra: 0 6px 20px rgba(102, 0, 153, 0.1);
   --largura-max: 1040px;
+  --superficie: #ffffff;
+  --roxo-texto: #660099;
+  --foco: #8a2be2;
+  --erro: #b3261e;
+  --sucesso: #1b7f3b;
 }
 
 /* ===== Base ===== */
@@ -42,7 +47,7 @@ h3 {
 
 h2 {
   font-size: 1.6rem;
-  color: var(--roxo);
+  color: var(--roxo-texto);
   margin-bottom: 1.25rem;
 }
 
@@ -103,7 +108,7 @@ h2::after {
 }
 
 .selo-claro {
-  color: var(--roxo);
+  color: var(--roxo-texto);
   background-color: var(--roxo-claro);
 }
 
@@ -204,7 +209,7 @@ h2::after {
 }
 
 .secao {
-  background-color: var(--branco);
+  background-color: var(--superficie);
   border: 1px solid var(--borda);
   border-radius: var(--raio);
   box-shadow: var(--sombra);
@@ -251,7 +256,7 @@ h2::after {
 .tags li {
   font-weight: 600;
   font-size: 0.9rem;
-  color: var(--roxo);
+  color: var(--roxo-texto);
   background-color: var(--roxo-claro);
   border-radius: 999px;
   padding: 0.35rem 1rem;
@@ -290,7 +295,7 @@ h2::after {
 
 .tabela td:first-child {
   font-weight: 700;
-  color: var(--roxo);
+  color: var(--roxo-texto);
 }
 
 /* ===== Cards de projetos ===== */
@@ -311,7 +316,7 @@ h2::after {
   border-radius: var(--raio);
   padding: 1.5rem;
   min-width: 240px;
-  background-color: var(--branco);
+  background-color: var(--superficie);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -322,7 +327,7 @@ h2::after {
 
 .card h3 {
   margin: 0;
-  color: var(--roxo);
+  color: var(--roxo-texto);
 }
 
 .card p {
@@ -330,14 +335,14 @@ h2::after {
   flex-grow: 1;
 }
 
-.card .botao {
+.card-acoes {
   margin-top: 0.5rem;
 }
 
 /* Card do projeto da Vivo em destaque */
 .card-destaque {
   border-top-color: var(--rosa);
-  background: linear-gradient(180deg, var(--roxo-claro), var(--branco) 60%);
+  background: linear-gradient(180deg, var(--roxo-claro), var(--superficie) 60%);
 }
 
 .card-etiqueta {
@@ -395,11 +400,12 @@ h2::after {
 
 .campo label {
   font-weight: 600;
-  color: var(--roxo);
+  color: var(--roxo-texto);
 }
 
 .campo input,
-.campo textarea {
+.campo textarea,
+.campo select {
   font: inherit;
   color: var(--texto);
   padding: 0.7rem 1rem;
@@ -415,8 +421,8 @@ h2::after {
 }
 
 .campo input:focus,
-.campo textarea:focus {
-  outline: none;
+.campo textarea:focus,
+.campo select:focus {
   border-color: var(--roxo);
   box-shadow: 0 0 0 3px rgba(102, 0, 153, 0.15);
 }
@@ -437,7 +443,7 @@ h2::after {
 
 .complementar-bloco {
   flex: 2 1 380px;
-  background-color: var(--branco);
+  background-color: var(--superficie);
   border: 1px solid var(--borda);
   border-radius: var(--raio);
   padding: 2rem;
@@ -485,7 +491,7 @@ h2::after {
   height: 15px;
   border-radius: 50%;
   background-color: var(--roxo);
-  border: 3px solid var(--branco);
+  border: 3px solid var(--superficie);
   box-shadow: 0 0 0 2px var(--roxo);
 }
 
@@ -495,7 +501,7 @@ h2::after {
 }
 
 .linha-do-tempo strong {
-  color: var(--roxo);
+  color: var(--roxo-texto);
 }
 
 .linha-do-tempo span {
@@ -555,5 +561,183 @@ h2::after {
 
   .formulario .botao {
     align-self: stretch;
+  }
+}
+
+/* =========================================================
+   Parte final — interatividade, acessibilidade e tema escuro
+   ========================================================= */
+
+/* O atributo hidden sempre vence o display dos componentes (filtro) */
+[hidden] {
+  display: none !important;
+}
+
+/* Foco visível para quem navega pelo teclado */
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 3px;
+}
+
+.cabecalho :focus-visible {
+  outline-color: var(--branco);
+}
+
+/* Tema escuro: só troca os tokens, o layout continua o mesmo */
+body.escuro {
+  --fundo: #140a1c;
+  --superficie: #1f1129;
+  --texto: #f3eafa;
+  --texto-suave: #cbbcd8;
+  --borda: #3b2a4a;
+  --roxo-claro: #2d1840;
+  --roxo-texto: #dcb0ff;
+  --foco: #e3b8ff;
+  --erro: #ff9b93;
+  --sucesso: #82e0a3;
+  --sombra: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+/* Botão de tema no topo */
+.botao-tema {
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--branco);
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.botao-tema:hover,
+.botao-tema:focus-visible {
+  background-color: var(--branco);
+  color: var(--roxo);
+}
+
+/* Mostrar mais / Mostrar menos */
+.botao-texto {
+  font: inherit;
+  font-weight: 600;
+  color: var(--branco);
+  background: none;
+  border: none;
+  padding: 0.2rem 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.botao-texto:hover {
+  color: #f3d9ff;
+}
+
+/* Botão secundário (Remover) */
+.botao-secundario {
+  color: var(--roxo-texto);
+  background-color: transparent;
+  border-color: currentColor;
+}
+
+.botao-secundario:hover,
+.botao-secundario:focus {
+  color: var(--branco);
+  background-color: var(--rosa);
+  border-color: var(--rosa);
+}
+
+/* Cadastro de projetos */
+.formulario-projeto {
+  max-width: none;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px dashed var(--borda);
+  border-radius: var(--raio);
+  background-color: var(--fundo);
+}
+
+.formulario-titulo {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--roxo-texto);
+}
+
+/* Barra com filtro e contador */
+.projetos-barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.campo-filtro {
+  flex: 0 1 260px;
+}
+
+.secao .contador {
+  margin: 0;
+  font-weight: 700;
+  color: var(--roxo-texto);
+  background-color: var(--roxo-claro);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+}
+
+.secao .status {
+  min-height: 1.6em;
+  margin: 0.75rem 0 1rem;
+  font-weight: 600;
+}
+
+.secao .status-erro {
+  color: var(--erro);
+}
+
+.secao .status-sucesso {
+  color: var(--sucesso);
+}
+
+.secao .lista-vazia {
+  margin: 1rem 0 0;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px dashed var(--borda);
+  border-radius: var(--raio);
+}
+
+/* Partes do card */
+.card-topo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.card-categoria {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--roxo-texto);
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  padding: 0.05rem 0.55rem;
+}
+
+.card-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .formulario-projeto {
+    padding: 1.25rem 1rem;
+  }
+
+  .campo-filtro {
+    flex: 1 1 100%;
   }
 }

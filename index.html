@@ -9,13 +9,14 @@
       content="Portfólio pessoal de Gabriel Mendes, desenvolvedor Fullstack."
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer ></script>
   </head>
   <body>
     <!-- Cabeçalho -->
     <header class="cabecalho">
       <div class="cabecalho-topo">
         <a href="#sobre" class="logo">Gabriel Mendes</a>
-        <nav>
+        <nav aria-label="Menu principal">
           <ul class="menu">
             <li><a href="#sobre">Sobre mim</a></li>
             <li><a href="#conhecimentos">Conhecimentos</a></li>
@@ -23,6 +24,9 @@
             <li><a href="#contato">Contato</a></li>
           </ul>
         </nav>
+        <button id="tema" class="botao-tema" type="button" aria-pressed="false">
+          Tema escuro
+        </button>
       </div>
 
       <div class="apresentacao">
@@ -33,6 +37,21 @@
           Crio soluções digitais completas, com foco em boa experiência do
           usuário, organização do código e desenvolvimento funcional.
         </p>
+        <p id="apresentacao-extra" class="frase" hidden>
+          Comecei em 2023 na Cubos Academy, passei pela Praxis Empresa Júnior
+          como projetista e depois gerente de TI, e hoje, no estágio na Vivo,
+          desenvolvo ferramentas de análise de dados, um bot do Telegram e
+          telas com AdonisJS e Nuxt.
+        </p>
+        <button
+          id="mostrar-mais"
+          class="botao-texto"
+          type="button"
+          aria-expanded="false"
+          aria-controls="apresentacao-extra"
+        >
+          Mostrar mais
+        </button>
         <div class="acoes">
           <a href="#projetos" class="botao">Ver projetos</a>
           <a href="#contato" class="botao botao-contorno">Fale comigo</a>
@@ -124,9 +143,56 @@
 
       <section id="projetos" class="secao">
         <h2>Projetos</h2>
-        <div class="cards">
-          <article class="card card-destaque">
-            <span class="card-etiqueta">Vivo</span>
+
+        <form id="cadastro" class="formulario formulario-projeto" novalidate>
+          <h3 class="formulario-titulo">Cadastrar projeto</h3>
+          <div class="campos-linha">
+            <div class="campo">
+              <label for="projeto-nome">Nome do projeto</label>
+              <input
+                type="text"
+                id="projeto-nome"
+                name="nome"
+                required
+                minlength="3"
+              />
+            </div>
+            <div class="campo">
+              <label for="projeto-categoria">Categoria</label>
+              <select id="projeto-categoria" name="categoria">
+                <option value="dados">Dados</option>
+                <option value="automacao">Automação</option>
+                <option value="web">Web</option>
+              </select>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="projeto-descricao">Descrição (opcional)</label>
+            <input type="text" id="projeto-descricao" name="descricao" />
+          </div>
+          <button type="submit" class="botao">Adicionar projeto</button>
+        </form>
+
+        <div class="projetos-barra">
+          <div class="campo campo-filtro">
+            <label for="filtro">Filtrar por categoria</label>
+            <select id="filtro">
+              <option value="todos">Todos</option>
+              <option value="dados">Dados</option>
+              <option value="automacao">Automação</option>
+              <option value="web">Web</option>
+            </select>
+          </div>
+          <p id="contador" class="contador"></p>
+        </div>
+        <p id="status" class="status" role="status"></p>
+
+        <div id="lista-projetos" class="cards">
+          <article class="card card-destaque projeto" data-categoria="dados">
+            <div class="card-topo">
+              <span class="card-etiqueta">Vivo</span>
+              <span class="card-categoria">Dados</span>
+            </div>
             <h3>Ferramentas de análise de dados</h3>
             <p>
               Desenvolvimento de ferramentas internas que auxiliam as equipes
@@ -136,10 +202,22 @@
               <li>Python</li>
               <li>Banco de dados</li>
             </ul>
-            <a href="#contato" class="botao">Saiba mais</a>
+            <div class="card-acoes">
+              <a href="#contato" class="botao">Saiba mais</a>
+              <button
+                type="button"
+                class="botao botao-secundario remover"
+                aria-label="Remover projeto Ferramentas de análise de dados"
+              >
+                Remover
+              </button>
+            </div>
           </article>
-          <article class="card card-destaque">
-            <span class="card-etiqueta">Vivo</span>
+          <article class="card card-destaque projeto" data-categoria="automacao">
+            <div class="card-topo">
+              <span class="card-etiqueta">Vivo</span>
+              <span class="card-categoria">Automação</span>
+            </div>
             <h3>Bot Telegram</h3>
             <p>
               Desenvolvimento de um bot no telegram para acompanhamento dos gabinetes dentro dos sites.
@@ -147,10 +225,22 @@
             <ul class="card-tecnologias">
               <li>JavaScript</li>
             </ul>
-            <a href="#contato" class="botao">Saiba mais</a>
+            <div class="card-acoes">
+              <a href="#contato" class="botao">Saiba mais</a>
+              <button
+                type="button"
+                class="botao botao-secundario remover"
+                aria-label="Remover projeto Bot Telegram"
+              >
+                Remover
+              </button>
+            </div>
           </article>
-          <article class="card card-destaque">
-            <span class="card-etiqueta">Vivo</span>
+          <article class="card card-destaque projeto" data-categoria="automacao">
+            <div class="card-topo">
+              <span class="card-etiqueta">Vivo</span>
+              <span class="card-categoria">Automação</span>
+            </div>
             <h3>Automação Celldowntime</h3>
             <p>
               Desenvolvimento de código para ETL, com automações no power automate para envio dos dados para o sharepoint.
@@ -161,9 +251,21 @@
               <li>Power Automate</li>
               <li>Sharepoint</li>
             </ul>
-            <a href="#contato" class="botao">Saiba mais</a>
+            <div class="card-acoes">
+              <a href="#contato" class="botao">Saiba mais</a>
+              <button
+                type="button"
+                class="botao botao-secundario remover"
+                aria-label="Remover projeto Automação Celldowntime"
+              >
+                Remover
+              </button>
+            </div>
           </article>
         </div>
+        <p id="lista-vazia" class="lista-vazia" hidden>
+          Nenhum projeto nesta categoria.
+        </p>
       </section>
 
       <section id="contato" class="secao">
@@ -230,6 +332,6 @@
       <p>© 2026 Gabriel Mendes · Programação Front-End · UCSAL</p>
     </footer>
 
-    <script src="script.js"></script>
+    
   </body>
 </html>
